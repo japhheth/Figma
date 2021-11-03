@@ -22,16 +22,19 @@ header{
     font-size: 40px;
 }
 
-.nested{
+/* .nested{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-column-gap: 1rem;
 
     
+} */
+
+.mobile-nested {
+    display: none;
 }
 .container1 img{
-    height: 70px;
-    width: 70px;
+   width:100%;
 }
 .text1{
     text-align: center;
@@ -86,7 +89,7 @@ button {
   }
 .container2{
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     align-content: center;
     justify-content: center;
     margin-top: 15rem;
@@ -149,12 +152,80 @@ footer{
     font-weight: bold;
 }
 
-@media only screen and (min-width: 600px) {
-/* for tablet*/
+/* Mobile phones */
+@media only screen and (max-width: 767px) {
+    .container1 {
+        grid-template-columns: 1fr;
+        grid-gap: 4rem;
+    }
+    .container2 {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+    .nested {
+        display: none;
+    }
+
+    .container1 img {
+        height: unset;
+        width: 100%;
+    }
+
+    .container2 > img {
+        margin-left: 0;
+        margin-bottom: 10px
+    }
+
+    footer {
+        flex-direction: column;
+    } 
+
+    footer > div {
+        margin-bottom: 15px;
+    }
+
+    .mobile-nested {
+        display: block;
+        width: 100%;
+    }
+    .btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
 }
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
+
+/* Tablets */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+    .container1 {
+        grid-template-columns: 1fr;
+        grid-gap: 4rem;
+    }
+    /* .container2 {
+        flex-direction: column;
+        padding: 0 10px;
+    } */
+    .nested {
+        display: none;
+    }
+
+    .container1 img {
+        height: unset;
+        width: 100%;
+    }
+
+    .container2 > img {
+        margin-left: 0;
+        margin-bottom: 10px
+    }
+
+    .mobile-nested {
+        display: block;
+        width: 100%;
+    }
 
    
 }
